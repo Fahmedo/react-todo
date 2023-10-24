@@ -1,0 +1,306 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #37745b;
+  --secondary-color: #8b9d77;
+  --tetiary-color: #e7eaef;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--tetiary-color);
+}
+/* *Task Css */
+
+.task-container {
+  position: absolute;
+  margin: 90px 50px 0;
+  width: 50%;
+  height: 100%;
+  right: 10%;
+  top: 0;
+  transition: all 500ms ease-in;
+}
+.task {
+  width: 100%;
+  height: 110px;
+  overflow-y: hidden;
+  background-color: var(--secondary-color);
+  padding: 20px 20px 0 20px;
+  border-radius: 20px;
+  margin: 20px;
+  color: var(--tetiary-color);
+  transform: translateX(20px);
+}
+.header {
+  display: flex;
+}
+.icons {
+  display: inline-flex;
+  position: absolute;
+  right: 5%;
+  gap: 5px;
+}
+.edit-icon,
+.delete-icon,
+.done-icon {
+  width: 25px;
+  transition: all;
+  color: var(--primary-color);
+}
+
+.edit-icon:hover,
+.delete-icon:hover,
+.done-icon:hover {
+  transform: scale(1.1, 1.1);
+  color: var(--tetiary-color);
+  cursor: pointer;
+}
+.header > h2 {
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: var(--primary-color);
+}
+.task p {
+  line-height: 20px;
+  text-align: justify;
+  font-weight: bold;
+}
+small {
+  text-transform: capitalize;
+  position: absolute;
+  right: 10%;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* ///////////////////////////////////////// */
+/* * SideBar styling */
+
+.sidebar_container {
+  position: fixed;
+  width: 30%;
+  height: 100vh;
+  background-color: var(--secondary-color);
+  transition: all 60ms ease-in;
+}
+.logo {
+  display: flex;
+  padding: 20px 0;
+  font-family: cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--tetiary-color);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.logo span {
+  color: var(--primary-color);
+}
+.logo svg {
+  width: 50px;
+  color: var(--primary-color);
+}
+.actvities {
+  display: flex;
+  margin-top: 30px;
+  text-transform: capitalize;
+  background-color: var(--tetiary-color);
+  height: 50px;
+  width: 60%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 0 10px;
+  align-items: center;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+/* ///////////////////////////////////////// */
+/* * AddTask styling */
+.add_icon {
+  position: fixed;
+  margin-top: 20px;
+  top: 0;
+  right: 10%;
+  width: 50px;
+  height: 50px;
+  color: var(--tetiary-color);
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 1s;
+}
+.add_icon:hover {
+  transform: scale(1.1, 1.1);
+}
+.home-container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 70%;
+  height: 100%;
+  right: 0%;
+  top: 0;
+  z-index: 9;
+  display: none;
+}
+.hidden {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 70%;
+  height: 100vh;
+  right: 0%;
+  top: 0;
+  z-index: 9;
+  display: block;
+}
+.task_modal {
+  padding: 20px 30px 40px;
+  width: 300px;
+  height: min-content;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--secondary-color);
+  color: var(--tetiary-color);
+  text-transform: capitalize;
+}
+input,
+textarea,
+select,
+button {
+  border: 2px solid var(--primary-color);
+  outline: none;
+  background-color: var(--tetiary-color);
+  color: var(--primary-color);
+  padding: 5px;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--primary-color);
+}
+.header {
+  padding-top: 10px;
+  font-weight: bold;
+}
+.task_modal > label {
+  margin-top: 10px;
+}
+.task_modal > input,
+select {
+  width: 100%;
+  height: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.task_modal > textarea {
+  width: 100%;
+  border-radius: 10px;
+}
+button {
+  height: 40px;
+  border-radius: 50px;
+  font-weight: bolder;
+}
+.error {
+  display: none;
+  color: var(--secondary-color);
+  background-color: var(--tetiary-color);
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid red;
+  font-size: 0.9rem;
+}
+.active {
+  display: flex;
+  margin-top: 30px;
+  text-transform: capitalize;
+  height: 50px;
+  width: 60%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 0 10px;
+  align-items: center;
+  cursor: pointer;
+  color: var(--tetiary-color);
+  border: 5px solid var(--tetiary-color);
+  background-color: var(--secondary-color);
+  font-weight: bolder;
+  transform: translateX(20px);
+  transition: all 500ms ease-in;
+}
+
+@media (max-width: 500px) {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .task-container {
+    margin: 90px 10px 0;
+    width: 60%;
+    height: 100vh;
+  }
+  .task {
+    padding: 15px 15px 0 15px;
+    border-radius: 20px;
+    margin: 10px;
+    height: 100px;
+  }
+
+  .icons {
+    top: 5px;
+  }
+  .edit-icon,
+  .delete-icon,
+  .done-icon {
+    width: 1rem;
+  }
+  .header > h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  .task p {
+    line-height: 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .logo {
+    font-size: 1rem;
+    padding: 5px;
+  }
+  .logo svg {
+    width: 40px;
+    color: var(--primary-color);
+  }
+  .actvities {
+    margin-top: 20px;
+    padding: 5px;
+    align-items: center;
+    font-size: 12px;
+  }
+  .task_modal {
+    width: 200px;
+    margin: 10px auto;
+  }
+  .active {
+    border: 2px solid var(--tetiary-color);
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  button {
+    height: 25px;
+  }
+  .error {
+    font-size: 0.7rem;
+  }
+}

@@ -1,5 +1,5 @@
 import '../index.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function TaskForm({
   setAddTask,
@@ -20,9 +20,14 @@ export default function TaskForm({
     setDescription('');
     setDone(false);
     setAddTask(false);
-
-    // localStorage.setItem('tasks', JSON.stringify(tasks));
   }
+
+  useEffect(
+    function () {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    },
+    [tasks]
+  );
   return (
     <form className="task_modal" action="" onSubmit={hadleSubmit}>
       <div class="header">Add Task</div>

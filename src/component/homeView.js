@@ -6,26 +6,10 @@ import { useState } from 'react';
 import TaskForm from './taskForm';
 
 export default function AddTask() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 0,
-      title: 'wash dishes',
-      description: 'Example: by 2pm i will get my dish washed ',
-      done: true,
-    },
-    {
-      id: 1,
-      title: 'Go to the mall',
-      description: 'Example: get grocesaries ',
-      done: false,
-    },
-    {
-      id: 2,
-      title: 'Call babe',
-      description: 'Example: call me babe',
-      done: true,
-    },
-  ]);
+  const [tasks, setTasks] = useState(function () {
+    const storedTask = localStorage.getItem('tasks');
+    return JSON.parse(storedTask);
+  });
   const [addTask, setAddTask] = useState(false);
   const [done, setDone] = useState(false);
   const [sort, setSort] = useState(1);
